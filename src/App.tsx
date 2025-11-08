@@ -24,6 +24,13 @@ setinput("")
 console.log(tasks)
 }
 
+function excluir(){
+   // eslint-disable-next-line no-restricted-globals
+    let sure = confirm("Tem certeza que deseja apagar tudo?")
+if(sure){
+    novatarefa([])
+}
+}
 
 
 
@@ -47,6 +54,9 @@ return(
 }
 
 </ul>
+{ tarefas.length > 0 &&(
+<button onClick={excluir}>Delete All</button>
+)}
 </section>
 )
 
