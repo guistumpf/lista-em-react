@@ -1,8 +1,12 @@
-import { use, useState } from "react";
+import { use, useEffect, useState } from "react";
 
 export default function App(){
-    const [tarefas, novatarefa] = useState<any[]>([])
+    const [tarefas, novatarefa] = useState<any[]>(() => JSON.parse(localStorage.getItem("tarefas") || "[]"))
 const [input, setinput] = useState<string>("")
+useEffect(() => {
+    localStorage.setItem('tarefas', JSON.stringify(tarefas))
+}, [tarefas]
+)
 
 function add(){
     if(input.trim() === ""){
@@ -19,6 +23,7 @@ novatarefa([...tarefas, tasks])
 setinput("")
 console.log(tasks)
 }
+
 
 
 
