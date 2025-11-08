@@ -1,7 +1,7 @@
 import { use, useState } from "react";
 
 export default function App(){
-    const [tarefas, novatarefa] = useState<string[]>([])
+    const [tarefas, novatarefa] = useState<any[]>([])
 const [input, setinput] = useState<string>("")
 
 function add(){
@@ -9,10 +9,15 @@ function add(){
         alert("digite uma tarefa")
     return
     }
+const tasks: any = {
+    id: Date.now(),
+    text: input
+}
 
 
-novatarefa([...tarefas, input])
+novatarefa([...tarefas, tasks])
 setinput("")
+console.log(tasks)
 }
 
 
@@ -28,9 +33,9 @@ return(
 />
 <button onClick={add}>Add</button>
 <ul>
-{tarefas.map((tarefas) => {
-    return <li key={tarefas}>
-        {tarefas}
+{tarefas.map((tarefa) => {
+    return <li key={tarefa.id}>
+        {tarefa.text}
     </li>
 })
 
