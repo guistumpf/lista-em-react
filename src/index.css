@@ -1,0 +1,55 @@
+*{
+    margin: 0; 
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #363434;
+    color: white;
+    min-height: 100vh ;
+    display: flex;
+ justify-content: center;
+ place-items: start;
+}
+ul{
+    padding-left:20px ;
+    font-size: 17px;
+}
+
+li{
+    list-style: decimal;
+color: rgb(245, 243, 243);
+}
+
+h1{
+    margin-bottom: 10px;
+    color: crimson;
+}
+
+input{
+    margin-right: 3px;
+border: 2px solid black;
+font-size: 15px;
+}
+
+.add{
+    font-size: 14px;
+background-color: white;
+border: 1px solid black;
+cursor: pointer;
+transition: transform 0.3s;
+}
+
+.add:hover{
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border-color: white;
+    transform: scale(1.1);
+    
+}
+
+.delete{
+    background-color: white;
+    border: 2px solid black;
+    cursor: pointer;
+}

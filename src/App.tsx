@@ -43,7 +43,7 @@ export default function App() {
                 console.log(e.target.value)
             }}
             />
-            <button onClick={add}>Add</button>
+            <button onClick={add} className="add">Add</button>
             <ul>
                 {tarefas.map((tarefa) => {
                     return <li key={tarefa.id}>
@@ -55,7 +55,7 @@ export default function App() {
 
             </ul>
             {tarefas.length > 0 && (
-                <button onClick={excluir}>Delete All</button>
+                <button onClick={excluir} className="delete">Delete All</button>
             )}
         </section>
     )
